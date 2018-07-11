@@ -14,9 +14,11 @@ class App < Sinatra::Base
 
   get "/say/:number/:phrase" do
     @num = params[:number].to_i
-    @repeated_array = []
-    @answer = @num.times {|i| @repeated_array << params[:phrase]}
-    @answer.to_s
-    "#{@answer}"
+    @phrase = params[:phrase]
+    answer = " "
+    @num.times do 
+      answer += @phrase 
+    end 
+    "#{answer}"
   end
 end
