@@ -27,4 +27,10 @@ class App < Sinatra::Base
     @combined_str = params[:word1] + " " + params[:word2] + " " + params[:word3] + " " + params[:word4] + " " + params[:word5] + "."
     "#{@combined_str}"
   end
+
+  get "/:operation/:number1/:number2" do
+    @operation = params[:operation]
+    @num1 = params[:number1].to_i
+    @num2 = params[:number2].to_i   
+  end
 end
