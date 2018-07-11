@@ -16,6 +16,6 @@ class App < Sinatra::Base
     @num = params[:number].to_i
     @repeat_array = []
     @answer = @num.times {|i| @repeat_array << params[:phrase]}
-    "#{@answer}"
+    "#{@answer.to_s}"
   end
 end
